@@ -1,0 +1,45 @@
+Type: Jupyter Notebook Extension
+Compatibility: 4.x
+Name: Lynter
+Main: nb_lynt.js
+Description: Lints Jupyter notebooks!
+Link: README.md
+Parameters:
+        
+- name: nb_lynt.enable
+  default: true
+  input_type: checkbox
+  description: enable linting on notebook's first load
+  
+- name: nb_lynt.lint_on_change
+  default: true
+  input_type: checkbox
+
+- name: nb_lynt.button_icon
+  default: 'fa-flag-checkered'
+  input_type: text
+  description: the icon to use for the actions and toolbar buttons
+
+- name: nb_lynt.use_separate_kernel
+  default: true
+  input_type: checkbox
+
+- name: nb_lynt.delay
+  input_type: number
+  default: 500
+  min: 0
+  step: 1
+  description: |
+    Wait time, in milliseconds, from last change before linting
+
+- name: nb_lynt.use_toggle_hotkey
+  input_type: checkbox
+  default: false
+  description: |
+    Bind the nb_lynt:toggle action to a hotkey
+
+- name: nb_lynt.toggle_hotkey
+  input_type: hotkey
+  default: 'alt-h'
+  description: |
+    Hotkey to bind to the nb_lynt:toggle action (if selected for use, above)

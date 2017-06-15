@@ -1,0 +1,4 @@
+#!/opt/python3/3.5.3/bin/python3.5
+
+from jupyterhub.app import main
+main()

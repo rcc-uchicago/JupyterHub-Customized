@@ -1,0 +1,51 @@
+{% extends "page.html" %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block stylesheet %}
+{{super()}}
+{% endblock %}
+
+{% block params %}
+{{super()}}
+data-base-url="{{base_url | urlencode}}"
+{% endblock %}
+
+{% block headercontainer %}
+
+<div class="pull-left nbext-page-title-wrap">
+	<span class="nbext-page-title">
+		Nbextensions configuration
+		(<a href="{{base_url}}nbextensions/nbextensions_configurator/rendermd/nbextensions/nbextensions_configurator/readme.md">more information</a>)
+	</span>
+</div>
+
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block script %}
+
+	{{super()}}
+
+	<script type="text/javascript">
+		sys_info = {{sys_info|safe}};
+	</script>
+
+	<script type="text/javascript" charset="utf-8">
+		require(['jquery'], function (jq) {
+			// hack to fix notebook 4.2.1
+			// see https://github.com/jupyter/notebook/pull/1399
+			if (jq === undefined) {
+				require.undef('jquery');
+				require.undef('jquery-ui');
+				require.undef('jqueryui');
+				require.undef('bootstrap');
+			}
+			require(['nbextensions/nbextensions_configurator/main'], function (nbext_config_module) {
+				nbext_config_module.build_page();
+			});
+		});
+	</script>
+{% endblock %}

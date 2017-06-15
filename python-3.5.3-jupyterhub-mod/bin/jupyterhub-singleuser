@@ -1,0 +1,6 @@
+#!/opt/python3/3.5.3/bin/python3.5
+
+from jupyterhub.singleuser import main
+
+if __name__ == '__main__':
+    main()

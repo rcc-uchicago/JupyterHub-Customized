@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: jupyterhub-ldapauthenticator
+Version: 1.1
+Summary: LDAP Authenticator for JupyterHub
+Home-page: https://github.com/yuvipanda/ldapauthenticator
+Author: Yuvi Panda
+Author-email: yuvipanda@riseup.net
+License: 3 Clause BSD
+Platform: UNKNOWN
+Requires-Dist: ldap3
+Requires-Dist: jupyterhub
+
+UNKNOWN
+
+
